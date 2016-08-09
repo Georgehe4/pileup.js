@@ -20,6 +20,7 @@ import CoverageDataSource from './sources/CoverageDataSource';
 import EmptySource from './sources/EmptySource';
 
 // Visualizations
+import PileupCoverageTrack from './viz/PileupCoverageTrack';
 import CoverageTrack from './viz/CoverageTrack';
 import GenomeTrack from './viz/GenomeTrack';
 import GeneTrack from './viz/GeneTrack';
@@ -130,6 +131,7 @@ var pileup = {
     empty: EmptySource.create
   },
   viz: {
+    pileupcoverage: makeVizObject(PileupCoverageTrack),
     coverage: makeVizObject(CoverageTrack),
     genome:   makeVizObject(GenomeTrack),
     genes:    makeVizObject(GeneTrack),
