@@ -20,7 +20,6 @@ import canvasUtils from './canvas-utils';
 import dataCanvas from 'data-canvas';
 import style from '../style';
 
-
 class VariantTrack extends React.Component {
   props: VizProps & {source: VcfDataSource};
   state: void;  // no state
@@ -82,7 +81,7 @@ class VariantTrack extends React.Component {
     variants.forEach(variant => {
       ctx.pushObject(variant);
       var x = Math.round(scale(variant.position));
-      var width = Math.round(scale(variant.position + 1)) - 1 - x;
+      var width = Math.round(scale(variant.end)) - x;
       ctx.fillRect(x - 0.5, y - 0.5, width, style.VARIANT_HEIGHT);
       ctx.strokeRect(x - 0.5, y - 0.5, width, style.VARIANT_HEIGHT);
       ctx.popObject();
