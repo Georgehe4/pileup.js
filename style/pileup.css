@@ -179,10 +179,15 @@
   fill: blue;
   stroke: none;
 }
-
 /* pileup track */
-.pileup-root > .pileup, .pileup-root > .genotypes {
+.pileup-root > .pileup {
   flex: 1;  /* stretch to fill remaining space */
+  /* prevent tracks from becoming too small */
+  flex-basis: auto;
+  min-height: 300px;
+}
+.pileup-root > .genotypes {
+  flex: 1;
 }
 .pileup .alignment .match {
   fill: #c8c8c8;  /* matches IGV */
